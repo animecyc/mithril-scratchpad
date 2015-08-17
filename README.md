@@ -2,7 +2,11 @@
 > A simple flat-file note taking application inspired by Ghost.
 
 ## Installation
-Ensure you have all the dependencies installed: `npm install -g gulp vows webpack && npm install`.
+Ensure you have all the dependencies installed:
+
+```shell
+npm install -g gulp vows webpack && npm install
+```
 
 ## Usage
 Run `npm start` to start the server; Navigate to `127.0.0.1:3000` and start taking notes! It saves all the notes to a file called `db.json` in the root of the project.
