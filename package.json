@@ -18,7 +18,6 @@
     "start": "webpack && node index"
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
     "vows": "^0.8.1",
     "webpack": "^1.11.0"
   },

@@ -5,13 +5,19 @@
 Ensure you have all the dependencies installed:
 
 ```shell
-npm install -g gulp vows webpack && npm install
+npm install -g webpack && npm install
 ```
 
 ## Usage
 Run `npm start` to start the server; Navigate to `127.0.0.1:3000` and start taking notes! It saves all the notes to a file called `db.json` in the root of the project.
 
 ## Tests
+The tests are built using `vows`. Ensure you have `vows` installed to run any of the supplied tests:
+
+```shell
+npm install -g vows
+```
+
 Run `npm test` to run the available test suites.
 
 ## License
