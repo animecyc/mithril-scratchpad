@@ -1,0 +1,34 @@
+{
+  "name": "mithril-scratchpad",
+  "version": "0.1.0",
+  "description": "A simple Ghost-like note taking application",
+  "author": "Seth Benjamin <animecyc@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "mithril",
+    "notes"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/animecyc/mithril-scratchpad"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "vows --spec --isolate",
+    "start": "webpack && node index"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "vows": "^0.8.1",
+    "webpack": "^1.11.0"
+  },
+  "dependencies": {
+    "hapi": "^9.0.1",
+    "inert": "^3.0.1",
+    "lodash": "^3.10.1",
+    "lowdb": "^0.10.2",
+    "marked": "^0.3.5",
+    "mithril": "^0.2.0",
+    "underscore-db": "^0.9.0"
+  }
+}

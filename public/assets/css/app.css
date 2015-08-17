@@ -1,0 +1,232 @@
+@import 'normalize.css';
+* {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  font: 62.5%/1.65 "Open Sans", sans-serif;
+}
+body {
+  color: #3c4043;
+  font-size: 1.4rem;
+  height: 100%;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+.page-header {
+  font-size: 1.1rem;
+  position: relative;
+  background: #423d3c;
+  padding: 10px;
+  height: 45px;
+  text-transform: uppercase;
+}
+.page-header, .page-header a {
+  color: rgba(255, 255, 255, .5);
+}
+.page-header .branding {
+  display: inline-block;
+  margin-right: 20px;
+}
+.list-horizontal {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.list-horizontal li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-horizontal li a {
+  transition: color .1s, background .1s;
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  letter-spacing: 1px;
+  border-radius: 4px;
+}
+.list-horizontal li.active a, .list-horizontal li a:hover {
+  transition: color .1s, background .1s;
+  background: #2b2827;
+  color: #FFFFFF;
+}
+.content-wrapper {
+  position: absolute;
+  top: 45px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.floating-header {
+  position: absolute;
+  height: 35px;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 1.4rem;
+  line-height: 35px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  background: linear-gradient(to bottom, #FFF 0, #FFF 25%, rgba(255, 255, 255, .9) 100%);
+  z-index: 1;
+  color: #777;
+}
+.note-title {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+.preview-content {
+  color: #646464;
+}
+.preview-content p {
+  margin: 0 0 1.7em;
+}
+.notes-list {
+  position: absolute;
+  width: 27%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-right: 1px solid #EEE;
+  z-index: 1;
+}
+.notes-list-entries {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 35px;
+  overflow: auto;
+}
+.notes-list-entries .entries {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #EEE;
+}
+.notes-list-entries .entries .entry {
+  border-bottom: 1px solid #EEE;
+}
+.notes-list-entries .entries .entry a {
+  display: block;
+  padding: 20px 10px;
+}
+.notes-list-entries .entries .entry a .entry-title {
+  font-size: 1.3rem;
+  margin: 0;
+}
+.notes-list-preview {
+  position: absolute;
+  width: 73%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  overflow: auto;
+}
+.editor {
+  position: absolute;
+  top: 50px;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.editor-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.editor-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+}
+.editor-title input[type=text] {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 0 15px;
+  border-bottom: 1px solid #EEE;
+}
+.editor-actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #423d3c;
+  height: 50px;
+  padding: 10px;
+  text-align: right;
+}
+.editor-actions .list-horizontal li {
+  margin-left: 10px;
+  margin-right: 0;
+}
+.editor-actions .btn-save {
+  background: #2bbbad;
+  color: #FFF;
+}
+.editor-actions .btn-save:hover {
+  background: #1e8177;
+}
+.editor-actions .btn-delete {
+  background: #F44336;
+  color: #FFF;
+}
+.editor-actions .btn-delete:hover {
+  background: #da1a0c;
+}
+.editor-markdown {
+  position: absolute;
+  width: 50%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-right: 1px solid #EEE;
+}
+.editor-markdown textarea {
+  position: absolute;
+  top: 0;
+  bottom: 0, left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  outline: 0;
+  padding: 50px 15px 15px 15px;
+  resize: none;
+  border: none;
+}
+.editor-preview {
+  position: absolute;
+  width: 50%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-right: 1px solid #EEE;
+}
+.editor-preview .preview-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: auto;
+  word-wrap: break-word;
+  padding: 50px 15px 15px 15px;
+}
