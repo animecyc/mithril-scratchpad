@@ -9,13 +9,13 @@ module.exports = {
   view: function(ctrl) {
     return m('.notes-list-preview', [
       m('.preview-meta', [
-        m('a[href=/notes/' + ctrl.preview().id + '/edit]', {
+        m('a.btn[href=/notes/' + ctrl.preview().id + '/edit]', {
           onclick: function() {
             m.route(this.getAttribute('href'));
             m.redraw.strategy('diff');
             return false;
           }
-        }, 'Edit')
+        }, 'Edit Note')
       ]),
       m('h1.note-title', ctrl.preview().title),
       m('.preview-content', m.trust(marked(ctrl.preview().content || '')))

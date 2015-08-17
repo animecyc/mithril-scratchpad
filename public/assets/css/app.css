@@ -14,10 +14,22 @@ body {
 }
 a {
   text-decoration: none;
+  transition: color .1s, background .1s;
 }
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   padding-top: 0;
+}
+a.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: #EEE;
+  color: #333;
+}
+a.btn:hover {
+  background: #DDD;
+  color: #555;
 }
 .page-header {
   font-size: 1.1rem;
@@ -45,7 +57,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 10px;
 }
 .list-horizontal li a {
-  transition: color .1s, background .1s;
   position: relative;
   display: inline-block;
   padding: 5px 10px;
@@ -53,7 +64,6 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 4px;
 }
 .list-horizontal li.active a, .list-horizontal li a:hover {
-  transition: color .1s, background .1s;
   background: #2b2827;
   color: #FFFFFF;
 }
