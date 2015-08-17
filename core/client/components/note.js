@@ -2,6 +2,11 @@ module.exports = function(m) {
   var layout = require('./layouts/default');
   var state = {};
 
+  /**
+   * Fetch notes from the service
+   *
+   * @return {Promise}
+   */
   function getNotes() {
     return m.request({
       method: 'GET',
@@ -9,6 +14,13 @@ module.exports = function(m) {
     });
   }
 
+  /**
+   * Find a note by ID
+   *
+   * @param  {string} id
+   * @param  {Array}  notes
+   * @return {object}
+   */
   function findNote(id, notes) {
     for (var i = 0; i < notes.length; i++) {
       var note = notes[i];

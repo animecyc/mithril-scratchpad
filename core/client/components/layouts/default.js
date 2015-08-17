@@ -1,5 +1,11 @@
 var m = require('mithril');
 
+/**
+ * Click event handler for layout menu items
+ *
+ * @param  {event}   Mouse event
+ * @return {boolean}
+ */
 function onItemClick(evt) {
   var activeEls = [].slice.call(document.querySelectorAll('.page-header li.active'));
 
@@ -11,6 +17,9 @@ function onItemClick(evt) {
 
   m.route(this.getAttribute('href'));
 
+  // Redraw the layout using the diff strategy only if we have no
+  // active elements in the menu; This is to ensure that components
+  // redraw correctly when navigating around the editor...
   if (activeEls.length) {
     m.redraw.strategy('diff');
   }

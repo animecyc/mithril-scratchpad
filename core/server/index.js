@@ -3,7 +3,6 @@ var path = require('path');
 var hapi = require('hapi');
 var inert = require('inert');
 var InternalRoute = require('./router').InternalRoute;
-
 var server = new hapi.Server();
 
 module.exports = function(config) {
@@ -19,6 +18,8 @@ module.exports = function(config) {
 
   if (Array.isArray(config.routes)) {
     config.routes.forEach(function(route) {
+      // Instances of Route do not have handlers, we need to generate them before
+      // passing them off to Hapi
       if (route instanceof InternalRoute && !route.handler && !route.config.handler) {
         route.handler = function(req, reply) {
           var resource = route.resource.split('@');
@@ -26,6 +27,7 @@ module.exports = function(config) {
           var instance = new controller();
           var method = instance[resource[1]];
 
+          // Call the request resource
           if (_.isFunction(method)) {
             method.call(instance, req, reply);
           }

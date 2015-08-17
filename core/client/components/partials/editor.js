@@ -22,6 +22,8 @@ module.exports = {
           value: ctrl.title(),
           placeholder: 'Your Note Title',
           onblur: function() {
+            // If there is no title and we've blurred the input lets just
+            // throw something in here...
             if (this.value.trim().length === 0) {
               ctrl.title('(Untitled)');
             }
@@ -80,6 +82,8 @@ module.exports = {
             tabindex: 2,
             value: ctrl.content(),
             onscroll: function() {
+              // Calculate how much we should be scrolling the preview element;
+              // We want to make sure things are always in view
               var scroll =
                 this.scrollTop / (this.scrollHeight - this.offsetHeight);
 

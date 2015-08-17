@@ -1,13 +1,31 @@
 var db = require('../db');
 
+/**
+ * NoteController
+ *
+ * @constructor
+ */
 function NoteController() {
   this.notes = db('notes');
 }
 
+/**
+ * List all notes in descending order
+ *
+ * @param  {Request} req
+ * @param  {Reply}   reply
+ * @return {[type]}
+ */
 NoteController.prototype.index = function(req, reply) {
   reply(this.notes.sortByOrder('created_at', ['desc']));
 };
 
+/**
+ * Get a note by ID
+ *
+ * @param {Request} req
+ * @param {Reply}   reply
+ */
 NoteController.prototype.show = function(req, reply) {
   var note = this.notes.findWhere({
     id: req.params.notes
@@ -23,6 +41,12 @@ NoteController.prototype.show = function(req, reply) {
   }).code(404);
 };
 
+/**
+ * Create a new note
+ *
+ * @param {Request} req
+ * @param {Reply}   reply
+ */
 NoteController.prototype.store = function(req, reply) {
   var payload = req.payload || {};
   var now = new Date();
@@ -36,6 +60,12 @@ NoteController.prototype.store = function(req, reply) {
   reply(note).code(201);
 };
 
+/**
+ * Update a note by ID
+ *
+ * @param {Request} req
+ * @param {Reply}   reply
+ */
 NoteController.prototype.update = function(req, reply) {
   var payload = req.payload || {};
   var note = this.notes.findWhere({
@@ -53,6 +83,12 @@ NoteController.prototype.update = function(req, reply) {
   reply(note);
 };
 
+/**
+ * Delete a note by ID
+ *
+ * @param {Request} req
+ * @param {Reply}   reply
+ */
 NoteController.prototype.destroy = function(req, reply) {
   this.notes.remove({
     id: req.params.notes
