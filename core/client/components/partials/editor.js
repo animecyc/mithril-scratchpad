@@ -65,6 +65,7 @@ module.exports = {
                     m.route('/notes/' + note.id + '/edit');
                   }
                 }).then(function() {
+                  alert('Note saved!');
                   delete state.notes;
                 });
               }
